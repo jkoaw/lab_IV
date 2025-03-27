@@ -2,6 +2,8 @@ namespace lab_IV
 {
     public partial class Form1 : Form
     {
+        int wartosc_rotate = 3;
+        bool flag = true;
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,68 @@ namespace lab_IV
             {
                 // Wywo³anie funkcji wczytuj¹cej dane z pliku CSV
                 wczytaj(openFileDialog1.FileName);
+            }
+        }
+
+        private void button_rotate_Click(object sender, EventArgs e)
+        {
+            Image cos = pictureBox.Image;
+            switch(wartosc_rotate)
+            {
+                case 0:
+                    cos.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                    pictureBox.Image = cos;
+                    break;
+                case 1:
+                    cos.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                    pictureBox.Image = cos;
+                    break;
+                case 2:
+                    cos.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                    pictureBox.Image = cos;
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
+        private void checkBox_90_CheckedChanged(object sender, EventArgs e)
+        {
+            if (flag)
+            {
+                flag = false;
+                wartosc_rotate = 0;
+                checkBox_180.Checked = false;
+                checkBox_270.Checked = false;
+                flag = true;
+            }
+            
+        }
+
+        private void checkBox_180_CheckedChanged(object sender, EventArgs e)
+        {
+            if (flag)
+            {
+                flag = false;
+                wartosc_rotate = 1;
+                checkBox_90.Checked = false;
+                checkBox_270.Checked = false;
+                flag = true;
+            }
+        }
+
+        private void checkBox_270_CheckedChanged(object sender, EventArgs e)
+        {
+            if (flag)
+            {
+                flag = false;
+                wartosc_rotate = 2;
+                checkBox_180.Checked = false;
+                checkBox_90.Checked = false;
+                flag = true;
             }
         }
     }
