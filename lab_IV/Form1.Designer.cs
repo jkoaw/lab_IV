@@ -35,6 +35,7 @@
             checkBox_270 = new CheckBox();
             button_rotate = new Button();
             button_invert = new Button();
+            button_upside = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -110,11 +111,22 @@
             button_invert.UseVisualStyleBackColor = true;
             button_invert.Click += button_invert_Click;
             // 
+            // button_upside
+            // 
+            button_upside.Location = new Point(41, 261);
+            button_upside.Name = "button_upside";
+            button_upside.Size = new Size(75, 23);
+            button_upside.TabIndex = 7;
+            button_upside.Text = "upside down";
+            button_upside.UseVisualStyleBackColor = true;
+            button_upside.Click += button_upside_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button_upside);
             Controls.Add(button_invert);
             Controls.Add(button_rotate);
             Controls.Add(checkBox_270);
@@ -138,5 +150,6 @@
         private CheckBox checkBox_270;
         private Button button_rotate;
         private Button button_invert;
+        private Button button_upside;
     }
 }

@@ -109,5 +109,12 @@ namespace lab_IV
             }
             pictureBox.Image = cos2;
         }
+
+        private void button_upside_Click(object sender, EventArgs e)
+        {
+            Image cos = pictureBox.Image;
+            cos.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            pictureBox.Image = cos;
+        }
     }
 }
