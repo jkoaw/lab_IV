@@ -34,6 +34,7 @@
             checkBox_180 = new CheckBox();
             checkBox_270 = new CheckBox();
             button_rotate = new Button();
+            button_invert = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -99,11 +100,22 @@
             button_rotate.UseVisualStyleBackColor = true;
             button_rotate.Click += button_rotate_Click;
             // 
+            // button_invert
+            // 
+            button_invert.Location = new Point(41, 290);
+            button_invert.Name = "button_invert";
+            button_invert.Size = new Size(75, 23);
+            button_invert.TabIndex = 6;
+            button_invert.Text = "invert";
+            button_invert.UseVisualStyleBackColor = true;
+            button_invert.Click += button_invert_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button_invert);
             Controls.Add(button_rotate);
             Controls.Add(checkBox_270);
             Controls.Add(checkBox_180);
@@ -125,5 +137,6 @@
         private CheckBox checkBox_180;
         private CheckBox checkBox_270;
         private Button button_rotate;
+        private Button button_invert;
     }
 }

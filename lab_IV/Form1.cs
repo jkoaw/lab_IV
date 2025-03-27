@@ -35,7 +35,7 @@ namespace lab_IV
         private void button_rotate_Click(object sender, EventArgs e)
         {
             Image cos = pictureBox.Image;
-            switch(wartosc_rotate)
+            switch (wartosc_rotate)
             {
                 case 0:
                     cos.RotateFlip(RotateFlipType.Rotate90FlipNone);
@@ -54,7 +54,7 @@ namespace lab_IV
                 default:
                     break;
             }
-            
+
         }
 
         private void checkBox_90_CheckedChanged(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace lab_IV
                 checkBox_270.Checked = false;
                 flag = true;
             }
-            
+
         }
 
         private void checkBox_180_CheckedChanged(object sender, EventArgs e)
@@ -92,6 +92,22 @@ namespace lab_IV
                 checkBox_90.Checked = false;
                 flag = true;
             }
+        }
+
+        private void button_invert_Click(object sender, EventArgs e)
+        {
+            Bitmap cos = new Bitmap(pictureBox.Image);
+            Bitmap cos2 = new Bitmap(cos.Width, cos.Height);
+            for (int i = 0; i < cos.Height; i++)
+            {
+                for (int j = 0; j < cos.Width; j++)
+                {
+                    Color pixel = cos.GetPixel(j, i);
+                    pixel = Color.FromArgb(255 - pixel.R, 255 - pixel.G, 255 - pixel.B);
+                    cos2.SetPixel(j, i, pixel);
+                }
+            }
+            pictureBox.Image = cos2;
         }
     }
 }
