@@ -29,5 +29,21 @@ namespace lab_IV
                 wczytaj(openFileDialog1.FileName);
             }
         }
+
+        private void button_green_Click(object sender, EventArgs e)
+        {
+            Bitmap cos = new Bitmap(pictureBox.Image);
+            Bitmap cos2 = new Bitmap(cos.Width, cos.Height);
+            for (int i = 0; i < cos.Height; i++)
+            {
+                for (int j = 0; j < cos.Width; j++)
+                {
+                    Color pixel = cos.GetPixel(j, i);
+                    pixel = Color.FromArgb(255 - pixel.R, 255 - pixel.G, 255 - pixel.B);
+                    cos2.SetPixel(j, i, pixel);
+                }
+            }
+            pictureBox.Image = cos2;
+        }
     }
 }
