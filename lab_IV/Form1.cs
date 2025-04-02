@@ -116,5 +116,30 @@ namespace lab_IV
             cos.RotateFlip(RotateFlipType.RotateNoneFlipY);
             pictureBox.Image = cos;
         }
+
+        private void button_green_Click(object sender, EventArgs e)
+        {
+            Bitmap cos = new Bitmap(pictureBox.Image);
+            Bitmap cos2 = new Bitmap(cos.Width, cos.Height);
+            for (int i = 0; i < cos.Height; i++)
+            {
+                for (int j = 0; j < cos.Width; j++)
+                {
+                    Color pixel = cos.GetPixel(j, i);
+                    if (pixel.G <= (pixel.R + pixel.B) * 2/3)
+                    {
+                        pixel = Color.FromArgb(0, 0, 0);
+                        cos2.SetPixel(j, i, pixel);
+                    }
+                    else 
+                    {
+                        cos2.SetPixel(j, i, pixel);
+                    }
+                    
+                    
+                }
+            }
+            pictureBox.Image = cos2;
+        }
     }
 }

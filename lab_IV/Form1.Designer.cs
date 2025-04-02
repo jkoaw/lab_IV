@@ -36,6 +36,7 @@
             button_rotate = new Button();
             button_invert = new Button();
             button_upside = new Button();
+            button_green = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -121,6 +122,16 @@
             button_upside.UseVisualStyleBackColor = true;
             button_upside.Click += button_upside_Click;
             // 
+            // button_green
+            // 
+            button_green.Location = new Point(41, 213);
+            button_green.Name = "button_green";
+            button_green.Size = new Size(75, 23);
+            button_green.TabIndex = 2;
+            button_green.Text = "only green";
+            button_green.UseVisualStyleBackColor = true;
+            button_green.Click += button_green_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -132,6 +143,7 @@
             Controls.Add(checkBox_270);
             Controls.Add(checkBox_180);
             Controls.Add(checkBox_90);
+            Controls.Add(button_green);
             Controls.Add(button_load);
             Controls.Add(pictureBox);
             Name = "Form1";
@@ -151,5 +163,6 @@
         private Button button_rotate;
         private Button button_invert;
         private Button button_upside;
+        private Button button_green;
     }
 }
