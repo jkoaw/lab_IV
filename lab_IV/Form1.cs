@@ -39,8 +39,17 @@ namespace lab_IV
                 for (int j = 0; j < cos.Width; j++)
                 {
                     Color pixel = cos.GetPixel(j, i);
-                    pixel = Color.FromArgb(255 - pixel.R, 255 - pixel.G, 255 - pixel.B);
-                    cos2.SetPixel(j, i, pixel);
+                    if (pixel.G <= (pixel.R + pixel.B) * 2/3)
+                    {
+                        pixel = Color.FromArgb(0, 0, 0);
+                        cos2.SetPixel(j, i, pixel);
+                    }
+                    else 
+                    {
+                        cos2.SetPixel(j, i, pixel);
+                    }
+                    
+                    
                 }
             }
             pictureBox.Image = cos2;
